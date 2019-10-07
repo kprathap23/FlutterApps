@@ -1,0 +1,65 @@
+{
+  "chefs": [
+    {
+      "Id": "1",
+      "Name": "Prasad Rao",
+      "Description": "Indian, Mughlai",
+      "imageURL": "https://picsum.photos/id/102/450/450",
+      "rating": "4.3",
+      "city": "Hyderabad",
+      "latlong": "17.447412,78.376228",
+      "phoneNumber": "985632174",
+      "emailId": "Prasad156@gmail.com",
+      "isActive":true
+    },
+   {
+      "Id": "2",
+      "Name": "Md.Ibrahim",
+      "Description": "Biryani, MuttonCurry",
+      "imageURL": "https://picsum.photos/id/102/450/450",
+      "rating": "4.3",
+      "city": "Hyderabad",
+      "latlong": "17.447412,78.376228",
+      "phoneNumber": "985632174",
+      "emailId": "Ibrahim@gmail.com",
+      "isActive":true	
+    },
+   {
+      "Id": "3",
+      "Name": "Rakesh Sign",
+      "Description": "Paneer Masala, Button Chiken",
+      "imageURL": "https://picsum.photos/id/102/450/450",
+      "rating": "4.3",
+      "city": "Hyderabad",
+      "latlong": "17.447412,78.376228",
+      "phoneNumber": "985632174",
+      "emailId": "Rakesh@gmail.com",
+      "isActive":true	
+    },
+    {
+      "Id": "4",
+      "Name": "Anoop Sridhar",
+      "Description": "Chat, Tiffin,Pav Baji",
+      "imageURL": "https://picsum.photos/id/102/450/450",
+      "rating": "4.3",
+      "city": "Hyderabad",
+      "latlong": "17.447412,78.376228",
+      "phoneNumber": "985632174",
+      "emailId": "Anoop@gmail.com",
+      "isActive":true	
+    },
+	 {
+      "Id": "5",
+      "Name": "Sridhar Varma",
+      "Description": "North, Thali, Pav Baji",
+      "imageURL": "https://picsum.photos/id/102/450/450",
+      "rating": "4.3",
+      "city": "Hyderabad",
+      "latlong": "17.447412,78.376228",
+      "phoneNumber": "985632174",
+      "emailId": "Sridhar@gmail.com",
+      "isActive":true	
+    }
+   
+  ]
+}
