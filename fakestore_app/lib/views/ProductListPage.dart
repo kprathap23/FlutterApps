@@ -7,6 +7,7 @@ import '../models/Product.dart';
 import 'CartPage.dart';
 import '../view_models/ProductListViewModel.dart';
 import '../view_models/ShoppingCartViewModel.dart';
+import 'ProductDetailsPage.dart';
 
 class ProductListPage extends StatelessWidget {
   @override
@@ -50,7 +51,16 @@ class ProductListPage extends StatelessWidget {
         itemCount: productListViewModel.products.length,
         itemBuilder: (context, index) {
           final product = productListViewModel.products[index];
-          return ProductItem(product: product);
+          return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProductDetailPage(product: product),
+                  ),
+                );
+              },
+              child: ProductItem(product: product));
         },
       ),
     );
