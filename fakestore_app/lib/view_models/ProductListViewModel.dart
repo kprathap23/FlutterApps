@@ -7,8 +7,7 @@ import 'package:http/http.dart' as http;
 import '../models/Product.dart';
 
 class ProductListViewModel extends ChangeNotifier {
-  final List<Product> _products = [];
-  List<Product> get products => _products;
+  List<Product> products = [];
 
   ProductListViewModel() {
     fetchProducts();
@@ -18,9 +17,9 @@ class ProductListViewModel extends ChangeNotifier {
     final response =
         await http.get(Uri.parse('https://fakestoreapi.com/products'));
     if (response.statusCode == 200) {
-      final List<dynamic> data = jsonDecode(response.body);
-      _products.clear();
-      _products.addAll(data.map((json) => Product.fromJson(json)).toList());
+      products.clear();
+      products = productsListFromJson(response.body);
+
       notifyListeners();
     } else {
       throw Exception('Failed to fetch products');

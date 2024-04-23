@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
 
 import '../models/Product.dart';
@@ -46,6 +47,22 @@ class ProductDetailPage extends StatelessWidget {
             Text(
               product.description,
               style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(height: 8),
+            Text(
+              'Rating:',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 8),
+            RatingBarIndicator(
+              rating: product.rating.rate!,
+              itemBuilder: (context, index) => Icon(
+                Icons.star,
+                color: Colors.amber,
+              ),
+              itemCount: 5,
+              itemSize: 24.0,
+              direction: Axis.horizontal,
             ),
             Spacer(),
             SizedBox(
