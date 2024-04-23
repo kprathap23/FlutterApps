@@ -51,7 +51,7 @@ class _NewsListScreenState extends State<NewsListScreen> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => NewsDetailScreen(
-                              url: _articles[index]['url'],
+                              url: _articles[index]['url'] ?? "",
                             ),
                           ));
                     },
@@ -73,7 +73,7 @@ class _NewsListScreenState extends State<NewsListScreen> {
               width: double.infinity,
               height: 200,
               child: CachedNetworkImage(
-                imageUrl: _articles[index]['urlToImage'],
+                imageUrl: _articles[index]['urlToImage'] ?? "",
                 imageBuilder: (context, imageProvider) => Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
@@ -92,7 +92,7 @@ class _NewsListScreenState extends State<NewsListScreen> {
             Padding(
               padding: const EdgeInsets.fromLTRB(5, 10, 10, 10),
               child: Text(
-                _articles[index]['title'],
+                _articles[index]['title'] ?? "",
                 style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w700,
