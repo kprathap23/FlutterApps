@@ -6,11 +6,14 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Bottom Navigation Screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img alt="Bottom Navigation - Home" src="https://github.com/kprathap23/FlutterApps/blob/main/flutter_ui_screens/screenshots/home-tab.png" width="50%" height="75%">
+
+<img alt="Bottom Navigation- Categories" src="https://github.com/kprathap23/FlutterApps/blob/main/flutter_ui_screens/screenshots/categories-tab.png" width="50%" height="75%">
+
+<img alt="Bottom Navigation- Account" src="https://github.com/kprathap23/FlutterApps/blob/main/flutter_ui_screens/screenshots/account-tab.png" width="50%" height="75%">
+
+
+<img alt="Bottom Navigation - Cart" src="https://github.com/kprathap23/FlutterApps/blob/main/flutter_ui_screens/screenshots/cart-tab.png " width="50%" height="75%">
