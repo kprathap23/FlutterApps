@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_screens/screens/drawer/DrawerNavigationScreen.dart';
 
 import 'screens/bottombar/BottomNavigationScreen.dart';
 
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
       ),
-      home: const BottomNavigationScreen(),
+      // home: const BottomNavigationScreen(),
+      home: DrawerNavgiationScreen(),
     );
   }
 }

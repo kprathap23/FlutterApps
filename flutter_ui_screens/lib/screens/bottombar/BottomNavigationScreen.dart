@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'AccountScreen.dart';
-import 'CartScreen.dart';
-import 'CategoriesScreen.dart';
-import 'HomeScreen.dart';
-import 'NotificationsScreen.dart';
+import '../shared/AccountScreen.dart';
+import '../shared/CartScreen.dart';
+import '../shared/CategoriesScreen.dart';
+import '../shared/HomeScreen.dart';
+import '../shared/NotificationsScreen.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
   const BottomNavigationScreen({super.key});
