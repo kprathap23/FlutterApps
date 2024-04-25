@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:news_api/screens/NewsDetailScreen.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 import '../models/NewsApiDataResponse.dart';
 
@@ -106,9 +107,19 @@ class _NewsListScreenState extends State<NewsListScreen> {
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(5, 5, 5, 10),
-              child: Text(
-                _articles[index].author!,
-                style: TextStyle(fontSize: 12, color: Colors.black87),
+              child: Row(
+                children: [
+                  Text(
+                    _articles[index].author!,
+                    style: TextStyle(fontSize: 12, color: Colors.black87),
+                  ),
+                  Spacer(),
+                  Text(
+                    timeago.format(_articles[index].publishedAt!,
+                        locale: 'en'),
+                    style: TextStyle(fontSize: 12, color: Colors.black54),
+                  ),
+                ],
               ),
             ),
           ],
