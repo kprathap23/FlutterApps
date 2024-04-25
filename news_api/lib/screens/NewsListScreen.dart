@@ -5,13 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:news_api/screens/NewsDetailScreen.dart';
 
+import '../models/NewsApiDataResponse.dart';
+
 class NewsListScreen extends StatefulWidget {
   @override
   _NewsListScreenState createState() => _NewsListScreenState();
 }
 
 class _NewsListScreenState extends State<NewsListScreen> {
-  List<dynamic> _articles = [];
+  List<Article> _articles = [];
 
   @override
   void initState() {
@@ -27,7 +29,10 @@ class _NewsListScreenState extends State<NewsListScreen> {
 
     if (response.statusCode == 200) {
       setState(() {
-        _articles = json.decode(response.body)['articles'];
+        NewsApiDataResponse newsApiDataResponse =
+            newsApiDataResponseFromJson(response.body);
+
+        _articles = newsApiDataResponse.articles!;
       });
     } else {
       throw Exception('Failed to load news');
@@ -51,7 +56,7 @@ class _NewsListScreenState extends State<NewsListScreen> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => NewsDetailScreen(
-                              url: _articles[index]['url'] ?? "",
+                              url: _articles[index].url!,
                             ),
                           ));
                     },
@@ -73,7 +78,7 @@ class _NewsListScreenState extends State<NewsListScreen> {
               width: double.infinity,
               height: 200,
               child: CachedNetworkImage(
-                imageUrl: _articles[index]['urlToImage'] ?? "",
+                imageUrl: _articles[index].urlToImage!,
                 imageBuilder: (context, imageProvider) => Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
@@ -92,7 +97,7 @@ class _NewsListScreenState extends State<NewsListScreen> {
             Padding(
               padding: const EdgeInsets.fromLTRB(5, 10, 10, 10),
               child: Text(
-                _articles[index]['title'] ?? "",
+                _articles[index].title!,
                 style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w700,
@@ -102,7 +107,7 @@ class _NewsListScreenState extends State<NewsListScreen> {
             Padding(
               padding: const EdgeInsets.fromLTRB(5, 5, 5, 10),
               child: Text(
-                _articles[index]['author'] ?? "",
+                _articles[index].author!,
                 style: TextStyle(fontSize: 12, color: Colors.black87),
               ),
             ),
