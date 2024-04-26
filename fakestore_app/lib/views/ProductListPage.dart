@@ -80,6 +80,22 @@ class ProductItem extends StatelessWidget {
     final cartViewModel =
         Provider.of<ShoppingCartViewModel>(context, listen: false);
 
+    return ProductCard2(product: product, cartViewModel: cartViewModel);
+  }
+}
+
+class ProductCard1 extends StatelessWidget {
+  const ProductCard1({
+    super.key,
+    required this.product,
+    required this.cartViewModel,
+  });
+
+  final Product product;
+  final ShoppingCartViewModel cartViewModel;
+
+  @override
+  Widget build(BuildContext context) {
     return Card(
       elevation: 0.8,
       color: Colors.white,
@@ -160,6 +176,138 @@ class ProductItem extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ProductCard2 extends StatelessWidget {
+  const ProductCard2({
+    super.key,
+    required this.product,
+    required this.cartViewModel,
+  });
+
+  final Product product;
+  final ShoppingCartViewModel cartViewModel;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 0.8,
+      color: Colors.white,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.network(
+                product.imageUrl,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Column(
+            children: [
+              Text(product.title),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 5, 0, 5),
+                child: Text(
+                  '\$${product.price.toString()}',
+                  style: TextStyle(fontWeight: FontWeight.w700),
+                ),
+              ),
+              Consumer<ShoppingCartViewModel>(
+                builder: (context, cartViewModel, _) {
+                  final itemCount = cartViewModel.cartItems[product] ?? 0;
+                  return Container(
+                    child: itemCount == 0
+                        ? Container(
+                            padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                            margin: EdgeInsets.all(5),
+                            color: Colors.red[300],
+                            child: InkWell(
+                              onTap: () {
+                                cartViewModel.addItemToCart(product);
+                              },
+                              child: const Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text('Add to cart',style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white),), // <-- Text
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Icon(
+                                  
+                                    Icons.shopping_cart,
+                                    size: 24.0,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
+                        : Container(
+                            padding: const EdgeInsets.all(5),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                InkWell(
+                                  onTap: () {
+                                    cartViewModel.removeItemFromCart(product);
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.red[300],
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    padding: EdgeInsets.all(2),
+                                    child: const Icon(
+                                      Icons.remove,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  itemCount.toString(),
+                                  style: const TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                InkWell(
+                                  onTap: () {
+                                    cartViewModel.addItemToCart(product);
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.red[300],
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    padding: EdgeInsets.all(2),
+                                    child: Icon(
+                                      Icons.add,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                  );
+                },
               ),
             ],
           ),
