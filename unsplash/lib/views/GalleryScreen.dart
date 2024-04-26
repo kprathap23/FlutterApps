@@ -38,6 +38,10 @@ class _GalleryScreenState extends State<GalleryScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    double width= MediaQuery.of(context).size.width;
+
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Gallery'),
@@ -49,7 +53,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
           } else {
             return StaggeredGridView.countBuilder(
               controller: _scrollController,
-              crossAxisCount: 2,
+              crossAxisCount: width<480 ? 2 : 4,
               itemCount:
                   viewModel.images.length + 1, // +1 for loading indicator
               itemBuilder: (context, index) {
