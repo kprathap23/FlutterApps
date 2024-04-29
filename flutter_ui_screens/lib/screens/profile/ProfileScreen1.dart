@@ -21,7 +21,8 @@ class _ProfileScreen1State extends State<ProfileScreen1> {
           ClipPath(
             clipper: TCustomCurvedEdges(),
             child: Container(
-              color: const Color.fromARGB(255, 75, 104, 255),
+              // color: const Color.fromARGB(255, 75, 104, 255),
+              color: Colors.red[300],
               padding: const EdgeInsets.all(0),
               child: SizedBox(
                   height: 300,
