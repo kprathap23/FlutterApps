@@ -21,3 +21,11 @@ Bottom Navigation Screenshots
 Drawer Navigation Screenshot
 
 <img alt="Drawer Navigation - Cart" src="https://github.com/kprathap23/FlutterApps/blob/main/flutter_ui_screens/screenshots/drawer-menu.png" width="50%" height="75%">
+
+
+Profile Screens 
+
+
+<img alt="Drawer Navigation - Cart" src="https://github.com/kprathap23/FlutterApps/blob/main/flutter_ui_screens/screenshots/my-account-1.png" width="50%" height="75%">
+
+

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_screens/screens/profile/ProfileScreen1.dart';
 import 'package:flutter_ui_screens/screens/drawer/DrawerNavigationScreen.dart';
 
 import 'screens/bottombar/BottomNavigationScreen.dart';
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const BottomNavigationScreen(),
-      home: DrawerNavgiationScreen(),
+      //home: DrawerNavgiationScreen(),
+      home: ProfileScreen1(),
     );
   }
 }
