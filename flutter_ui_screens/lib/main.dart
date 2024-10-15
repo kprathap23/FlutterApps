@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_screens/screens/dashboard/PhonepeHomeScreen.dart';
 import 'package:flutter_ui_screens/screens/profile/ProfileScreen1.dart';
 import 'package:flutter_ui_screens/screens/drawer/DrawerNavigationScreen.dart';
 import 'package:flutter_ui_screens/screens/slider/BannerScreen1.dart';
@@ -20,12 +21,13 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
-        useMaterial3: true,
+        useMaterial3: false,
       ),
       // home: const BottomNavigationScreen(),
       //home: DrawerNavgiationScreen(),
       // home: ProfileScreen1(),
-      home: BannerScreen1(),
+     // home: BannerScreen1(),
+     home: PhonePeHomeScreen(),
     );
   }
 }

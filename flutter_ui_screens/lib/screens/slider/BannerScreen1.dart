@@ -28,13 +28,11 @@ class _BannerScreen1State extends State<BannerScreen1> {
           child: Column(
         children: [
           ExpandableCarousel(
-            options: CarouselOptions(
+            options:  ExpandableCarouselOptions(
               autoPlay: true,
               autoPlayInterval: const Duration(seconds: 3),
               floatingIndicator: true,
               showIndicator: true,
-              
-            
             ),
             items: items.map((imageURL) {
               return Builder(
