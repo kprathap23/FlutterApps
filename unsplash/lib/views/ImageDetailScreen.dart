@@ -11,10 +11,13 @@ class ImageDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Image Detail'),
       ),
-      body: Center(
+      body: SafeArea(
         child: Image.network(
           imageUrl,
-          fit: BoxFit.contain,
+          fit: BoxFit.cover,
+          height: double.infinity,
+          width: double.infinity,
+          alignment: Alignment.center,
         ),
       ),
     );

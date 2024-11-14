@@ -13,6 +13,8 @@ class ImageService {
     final response =
         await http.get(Uri.parse('$_baseUrl?page=$page&client_id=$_apiKey'));
     if (response.statusCode == 200) {
+      //print(response.body);
+
       List<dynamic> data = json.decode(response.body);
       List<ImageModel> images = data
           .map((item) => ImageModel(imageUrl: item['urls']['regular']))
