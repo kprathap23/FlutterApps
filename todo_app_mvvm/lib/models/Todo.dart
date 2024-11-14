@@ -21,11 +21,10 @@ class Todo {
     );
   }
 
-
   factory Todo.fromJson(Map<String, dynamic> json) {
     return Todo(
       id: json['id'],
-      title: json['title'],
+      title: json['todo'],
       completed: json['completed'],
     );
   }
